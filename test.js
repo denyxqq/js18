@@ -1,4 +1,10 @@
 // #1
+const siblings = document.querySelectorAll(".sibling");
+console.log(`У списку ${siblings.length} категорії`);
+const titles = document.querySelectorAll(".title");
+titles.forEach((titles, index) =>
+  console.log(`Категорія: ${titles.textContent} Кількість елементів: ${siblings[index].children.length}`)
+);
 // #2
 const ingredients = [
   'Картопля',
