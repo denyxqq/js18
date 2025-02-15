@@ -40,4 +40,25 @@ const images = [
    alt: 'Group of Horses Running',
   },
  ];
-//    #4
+ let textElement = [];
+ for(let i = 0; i < images.length; i++){
+ textElement.push(`<li><img class="img" src="${images[i].url}" alt="${images[i].alt}"></li>`);
+ }
+ console.log(textElement);
+ const conectText = textElement.join(" ");
+ document.querySelector("ul#gallery").insertAdjacentHTML("afterbegin" , conectText);
+
+ //    #4
+
+const decrementButton = document.querySelector('[data-action="decrement"]')
+const incrementButton = document.querySelector('[data-action="increment"]')
+const valueSpan = document.getElementById('value')
+let counterValue = 0
+decrementButton.addEventListener('click', () => {
+  counterValue -= 1
+  valueSpan.textContent = counterValue
+})
+incrementButton.addEventListener('click', () => {
+  counterValue += 1
+  valueSpan.textContent = counterValue
+})
